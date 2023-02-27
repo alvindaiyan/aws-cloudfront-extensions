@@ -35,4 +35,4 @@ Publish following applications
 
 ### Fixed
 
-testing -deleteme
+testing -deleteme 1
