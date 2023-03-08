@@ -1,7 +1,7 @@
 name: "pull request check"
 
 on:
-  pull_request_target:
+  pull_request:
     types: [opened, reopened, edited, synchronize]
 permissions:
   contents: write
@@ -169,12 +169,6 @@ jobs:
       # A Docker image with Semgrep installed. Do not change this.
       image: returntocorp/semgrep
     # Skip any PR created by dependabot to avoid permission issues:
-    permissions:
-      # required for all workflows
-      security-events: write
-      # only required for workflows in private repositories
-      actions: read
-      contents: read
     if: (github.actor != 'dependabot[bot]')
     steps:
       # Fetch project source with GitHub Actions Checkout.
